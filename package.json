@@ -1,0 +1,22 @@
+{
+  "name": "ncors",
+  "version": "1.0.0",
+  "description": "No Cors Server to avoid cors erros",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harish321/ncors.git"
+  },
+  "author": "Harish Dhulipalla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harish321/ncors/issues"
+  },
+  "homepage": "https://github.com/Harish321/ncors#readme",
+  "dependencies": {
+    "cors-anywhere": "^0.4.3"
+  }
+}
