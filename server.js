@@ -1,13 +1,13 @@
-var proxyUrl = 'http://localhost:3000/',
-    targetUrl = 'http://dbtool.perdix.co.in:8081/api/clients?product=perdix&scope=Client%20Data'
-fetch(proxyUrl + targetUrl)
-  .then(blob => blob.json())
-  .then(data => {
-    console.table(data);
-    document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
-    return data;
-  })
-  .catch(e => {
-    console.log(e);
-    return e;
-  });
+// Listen on a specific host via the HOST environment variable
+var host = process.env.HOST || '0.0.0.0';
+// Listen on a specific port via the PORT environment variable
+var port = process.env.PORT || 8080;
+
+var cors_proxy = require('cors-anywhere');
+cors_proxy.createServer({
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2']
+}).listen(port, host, function() {
+    console.log('Running CORS Anywhere on ' + host + ':' + port);
+});
